@@ -1,61 +1,21 @@
 ---
-layout: workshop      # DON'T CHANGE THIS.
-# More detailed instructions (including how to fill these variables for an
-# online workshop) are available at
-# https://carpentries.github.io/workshop-template/customization/index.html
-venue: "HanBat University"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "125, Dongseo-daero, Yuseong-gu, Daejeon, Republic of Korea"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
-country: "kr"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "36.329155"        # decimal latitude of workshop venue (use https://www.latlong.net/)
-longitude: "127.315777"       # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "Aug 18-19 2020"  # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+layout: workshop      
+venue: "대전 한밭대(HanBat University) N13 509호"
+address: "125 Dongseo-daero, Yuseong-gu, Daejeon, Republic of Korea"
+country: "kr"
+language: "kr"
+latitude: "36.329155"
+longitude: "127.315777"
+humandate: "Aug 18-19 2020"
 humantime: "9:00 am - 4:30 pm KST (UTC+9)"    
-startdate: 2022-08-18      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2022-08-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+startdate: 2022-08-18
+enddate: 2022-08-19  
 instructor: ["Kwangchun Lee"] 
 helper: ["Choonghyun Ryu", "Jonghwa Shin"]
-email: ["victor@r2bit.com","antony@r2bit.com", "charlie@r2bit.com"]
+email: ["victor@r2bit.com"]
 collaborative_notes: https://pad.carpentries.org/2022-08-18-hanbat
 eventbrite: 390464669337
 ---
-
-{% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
-
-{% comment %}
-HEADER
-
-Edit the values in the block above to be appropriate for your workshop.
-If the value is not 'true', 'false', 'null', or a number, please use
-double quotation marks around the value, unless specified otherwise.
-And run 'make workshop-check' *before* committing to make sure that changes are good.
-{% endcomment %}
-
-
-{% comment %}
-8< ============= For a workshop delete from here =============
-For a workshop please delete the following block until the next dashed-line
-{% endcomment %}
-
-
-<div class="alert alert-danger">
-This is the workshop template. Delete these lines and use it to
-<a href="https://carpentries.github.io/workshop-template/customization/index.html">customize</a>
-your own website. If you are running a self-organized workshop or have not put
-in a workshop request yet, please also fill in
-<a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a>
-to let us know about your workshop and our administrator may contact you if we
-need any extra information.
-If this is a pilot workshop for a new lesson,
-set the `pilot` field to `true` in `_config.yml`.
-For workshops teaching a lesson in The Carpentries Incubator,
-remember to uncomment the `incubator_lesson_site`, `incubator_pre_survey`, and `incubator_post_survey`
-fields in `_config.yml`
-</div>
-
-{% comment %}
-8< ============================= until here ==================
-{% endcomment %}
 
 
 {% comment %}
@@ -70,26 +30,6 @@ It looks like you are setting up a website for a Data Carpentry curriculum but y
 {% endunless %}
 {% endif %}
 
-{% comment %}
-Check SWC curriculum
-{% endcomment %}
-
-{% if site.carpentry == "swc" %}
-{% unless site.curriculum == "swc-inflammation" or site.curriculum == "swc-gapminder" %}
-<div class="alert alert-warning">
-It looks like you are setting up a website for a Software Carpentry curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>swc-inflammation</code>, or <code>swc-gapminder</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
-</div>
-{% endunless %}
-{% endif %}
-
-{% comment %}
-EVENTBRITE
-
-This block includes the Eventbrite registration widget if
-'eventbrite' has been set in the header.  You can delete it if you
-are not using Eventbrite, or leave it in, since it will not be
-displayed if the 'eventbrite' field in the header is not set.
-{% endcomment %}
 {% if page.eventbrite %}
 <strong>Some adblockers block the registration window. If you do not see the
   registration box below, please check your adblocker settings.</strong>
@@ -103,7 +43,7 @@ displayed if the 'eventbrite' field in the header is not set.
 {% endif %}
 
 
-<h2 id="general">General Information</h2>
+<h2 id="general">일반 정보</h2>
 
 {% comment %}
 INTRODUCTION
@@ -155,12 +95,11 @@ address.
 {% endif %}
 {% if page.latitude and page.longitude and online == "false" %}
 <p id="where">
-  <strong>Where:</strong>
+  <strong>장소:</strong>
   {{page.address}}.
-  Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
+  혹은
+  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a> 참조.
 </p>
 {% elsif online == "true_public" %}
 <p id="where">
@@ -183,7 +122,7 @@ This block displays the date and links to Google Calendar.
 {% endcomment %}
 {% if page.humandate %}
 <p id="when">
-  <strong>When:</strong>
+  <strong>일시:</strong>
   {{page.humandate}}.
   {% include workshop_calendar.html %}
 </p>
@@ -195,15 +134,15 @@ SPECIAL REQUIREMENTS
 Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
-  <strong>Requirements:</strong>
+  <strong>요구사항:</strong>
   {% if online == "false" %}
+  
     Participants must bring a laptop with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+  워크샵 참석자는 관리자 권한을 갖는 맥/리눅스/윈도 운영체제를 탑재한 노트북을 지참하여 참석하여야 하며 가능하면 뜻을 같이 하는 친구와 함께 적극적인 참여를 권장합니다. 태블릿, 크롬북 등은 불가합니다.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  노트북에는 <a href="#setup">아래</a> 기술된 특정 소프트웨어 패키지를 설치해와야 합니다.
 </p>
 
 {% comment %}
@@ -243,8 +182,8 @@ CONTACT EMAIL ADDRESS
 Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
-  <strong>Contact:</strong>
-  Please email
+  <strong>연락처:</strong>
+  전자우편
   {% if page.email %}
   {% for email in page.email %}
   {% if forloop.last and page.email.size > 1 %}
@@ -258,8 +197,7 @@ Display the contact email address set in the configuration file.
   {% endfor %}
   {% else %}
   to-be-announced
-  {% endif %}
-  for more information.
+  {% endif %} 주소로 연락주세요.
 </p>
 
 <p id="roles">
@@ -291,10 +229,8 @@ Edit the text to match who can attend the workshop. For instance:
 
 <hr/>
 
-{% comment%}
-CODE OF CONDUCT
-{% endcomment %}
-<h2 id="code-of-conduct">Code of Conduct</h2>
+
+<h2 id="code-of-conduct">행동강령(Code of Conduct)</h2>
 
 <p>
 Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
@@ -308,118 +244,27 @@ Everyone who participates in Carpentries activities is required to conform to th
 <hr/>
 
 
-{% comment %}
-Collaborative Notes
-
-If you want to use an Etherpad, go to
-
-https://pad.carpentries.org/YYYY-MM-DD-site
-
-where 'YYYY-MM-DD-site' is the identifier for your workshop,
-e.g., '2015-06-10-esu'.
-
-Note we also have a CodiMD (the open-source version of HackMD)
-available at https://codimd.carpentries.org
-{% endcomment %}
-{% if page.collaborative_notes %}
-<h2 id="collaborative_notes">Collaborative Notes</h2>
+<h2 id="collaborative_notes">공동 메모장(Collaborative Notes)</h2>
 
 <p>
-We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
+노트필기, 채팅, URL과 코드를 공유하는데 <a href="{{ page.collaborative_notes }}">collaborative document</a> 을 사용합니다. 강사를 포함한 누구나 워크샵 관련 참여자 모두에게 도움이 될 수 있는 사항을 남길 수 있습니다.
 </p>
 <hr/>
-{% endif %}
 
-
-{% comment %}
-SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "incubator" %}
-<p><a href="{{ site.incubator_pre_survey }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.incubator_post_survey }}">Post-workshop Survey</a></p>
-{% elsif site.incubator_pre_survey or site.incubator_post_survey %}
-<div class="alert alert-danger">
-WARNING: you have defined custom pre- and/or post-survey links for
-a workshop not configured for The Carpentries Incubator
-(the value of `curriculum` is not set to `incubator` in `_config.yml`).
-Please comment out the `incubator_pre_survey` and `incubator_post_survey` fields
-in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
-change the value of `carpentry` to `incubator`.
-</div>
-{% else %}
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
 
 <hr/>
 
 
-{% comment %}
-SCHEDULE
+<h2 id="schedule">일정</h2>
 
-Show the workshop's schedule.
-
-Small changes to the schedule can be made by modifying the
-`schedule.html` found in the `_includes` folder for your
-workshop type (`swc`, `lc`, or `dc`). Edit the items and
-times in the table to match your plans. You may also want to
-change 'Day 1' and 'Day 2' to be actual dates or days of the
-week.
-
-For larger changes, a blank template for a 4-day workshop
-(useful for online teaching for instance) can be found in
-`_includes/custom-schedule.html`. Add the times, and what
-you will be teaching to this file. You may also want to add
-rows to the table if you wish to break down the schedule
-further. To use this custom schedule here, replace the block
-of code below the Schedule `<h2>` header below with
-`{% include custom-schedule.html %}`.
-{% endcomment %}
-
-<h2 id="schedule">Schedule</h2>
-
-{% if site.carpentry == "swc" %}
-{% include swc/schedule.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/schedule.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/schedule.html %}
-{% elsif site.carpentry == "incubator" %}
-This workshop is teaching a lesson in [The Carpentries Incubator](https://carpentries-incubator.org/).
-Please check [the lesson homepage]({{ site.incubator_lesson_site }}) for a list of lesson sections and estimated timings.
-{% endif %}
-
-{% comment %}
-Edit/replace the text above if you want to include a schedule table.
-See the contents of the _includes/custom-schedule.html file for an example of
-how one of these schedule tables is constructed.
-{% endcomment %}
-
-{% if site.pilot %}
-The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please [contact the workshop organisers](#contact) if you would like more information about the planned schedule.
-{% endif %}
+{% include custom-schedule.html %}
 
 <hr/>
 
 
-{% comment %}
-SETUP
-
-Delete irrelevant sections from the setup instructions.  Each
-section is inside a 'div' without any classes to make the beginning
-and end easier to find.
-
-This is the other place where people frequently make mistakes, so
-please preview your site before committing, and make sure to run
-'tools/check' as well.
-{% endcomment %}
-
-<h2 id="setup">Setup</h2>
+<h2 id="setup">환경설정</h2>
 
 <p>
-  To participate in a
   {% if site.carpentry == "swc" %}
   Software Carpentry
   {% elsif site.carpentry == "dc" %}
@@ -427,43 +272,42 @@ please preview your site before committing, and make sure to run
   {% elsif site.carpentry == "lc" %}
   Library Carpentry
   {% endif %}
-  workshop,
-  you will need access to software as described below.
-  In addition, you will need an up-to-date web browser.
+  (데이터 카펜트리) 워크샵에 참여하기 위해서, 다음에 기술된 소프트웨어 툴체인을 구축하여 
+사전에 동작하게 만들 필요가 있다. 워크샵 시작전에 필요한 모든 소프트웨어가 설치되었는지 확인한다.
+(적어도 소프트웨어를 다운로드하거나 인스톨러를 준비)
 </p>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+  데이터 카펜트리에서 
+  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">환경설치 문제점과 해결책에 대한 위키 페이지</a>를 운영하고 있으니
+  설치시 참조한다..
 </p>
 
-{% comment %}
-For online workshops, the section below provides:
-- installation instructions for the Zoom client
-- recommendations for setting up Learners' workspace so they can follow along
-  the instructions and the videoconferencing
+<h2 id="sponsor">후원</h2>
 
-If you do not use Zoom for your online workshop, edit the file
-`_includes/install_instructions/videoconferencing.html`
-to include the relevant installation instrucctions.
-{% endcomment %}
-{% if online != "false" %}
-{% include install_instructions/videoconferencing.html %}
-{% endif %}
+이 프로그램은 과학기술진흥기금 및 복권기금의 재원으로 운영되고, 과학기술정보통신부와 한국과학창의재단의 지원을 받아 수행된 성과물로 우리나라의 과학기술 발전과 사회적 가치 증진에 기여하고 있습니다.
 
-{% comment %}
-These are the installation instructions for the tools used
-during the workshop.
-{% endcomment %}
+<div class="row-fluid">
+  <table class="table">
+    <tr> 
+      <td> 
+          <img src="./fig/01.png" width="200">
+      </td>
+      <td>
+          <img src="./fig/02.png" width ="200">
+      </td>
+      <td>
+          <img src="./fig/03.png" width ="200">
+      </td>
+      <td>
+          <img src="./fig/04.png" width ="200">
+      </td>
+      <td>
+          <img src="./fig/daejeon.gif" width ="200">
+      </td>
+      <td>
+          대전과학문화거점센터
+      </td>
+    </tr>
+  </table>
+</div>
 
-{% if site.carpentry == "swc" %}
-{% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/setup.html %}
-{% elsif site.carpentry == "incubator" %}
-Please check the "Setup" page of
-[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
-to obtain the software and data you will need to follow the lesson.
-{% endif %}
